@@ -1,4 +1,4 @@
-import { Modal, useNotification, Input, Illustration, Button } from "web3uikit"
+import { Modal, useNotification, Input, Illustration, Button } from "@web3uikit/core"
 import { useState } from "react"
 import { useWeb3Contract } from "react-moralis"
 import { ethers } from "ethers"

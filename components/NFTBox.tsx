@@ -4,7 +4,7 @@ import {
     Tooltip, 
     Illustration, 
     useNotification 
-} from 'web3uikit'
+} from '@web3uikit/core'
 import nftAbi from '../constants/BasicNft.json'
 import nftMarketplaceAbi from '../constants/NftMarketplace.json'
 

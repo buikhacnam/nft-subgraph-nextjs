@@ -5,7 +5,7 @@ import { MoralisProvider } from "react-moralis"
 import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client"
 import Layout from "../components/Layout"
 import NetworkBanner from "../components/NetworkBanner"
-import { NotificationProvider } from "web3uikit"
+import { NotificationProvider } from "@web3uikit/core"
 
 const client = new ApolloClient({
     cache: new InMemoryCache(),

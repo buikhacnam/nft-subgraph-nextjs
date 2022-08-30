@@ -1,5 +1,5 @@
 import styles from '../styles/Home.module.css'
-import { Form, useNotification, Button } from 'web3uikit'
+import { Form, useNotification, Button } from '@web3uikit/core'
 import { useMoralis, useWeb3Contract } from 'react-moralis'
 import { ethers, BigNumber } from 'ethers'
 import nftAbi from '../constants/BasicNft.json'
