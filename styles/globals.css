@@ -1,0 +1,12 @@
+.nav-wrapper {
+    display: flex;
+    gap: 16px;
+    margin-top: 5px;
+}
+       
+
+@media only screen and (max-width: 600px) {
+    .nav-wrapper {
+        flex-direction: column;
+        
+}}

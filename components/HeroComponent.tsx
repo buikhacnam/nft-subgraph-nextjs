@@ -8,6 +8,7 @@ interface HeroProps {}
 
 const HeroComponent: React.FC<HeroProps> = ({}) => {
 	const router = useRouter()
+	console.log('router', router.pathname)
 	const {
 		enableWeb3, // the function asks for permissions and connects to Metamask
 		account, // account address of connected wallet
@@ -58,7 +59,7 @@ const HeroComponent: React.FC<HeroProps> = ({}) => {
 		>
 			<React.Fragment key='.0'>
 				<Typography variant='h1'>
-					<Link href='/'> Casey Bui NFT Marketplace</Link>
+					<Link href='/'> CaseyBui NFT Marketplace</Link>
 				</Typography>
 				<div style={{ marginTop: 10 }}>
 					{account && window.localStorage.getItem('connected') ? (
@@ -91,7 +92,7 @@ const HeroComponent: React.FC<HeroProps> = ({}) => {
 					)}
 				</div>
 
-				<div style={{ display: 'flex', columnGap: 16,  marginTop: 5 }}>
+				<div className='nav-wrapper'>
 					<Button
 						icon={<Dapps fontSize={24} />}
 						text='Home'
@@ -99,14 +100,16 @@ const HeroComponent: React.FC<HeroProps> = ({}) => {
 						onClick={() => {
 							router.push('/')
 						}}
+						iconColor={router.pathname === '/' ? 'rgb(236, 166, 9)' : 'rgb(46, 125, 175)'}
 					/>
 					<Button
 						icon={<Cart fontSize={24} />}
-						text='Sell NFT'
+						text='Sell NFT' 
 						theme='link'
 						onClick={() => {
 							router.push('/sell-nft')
 						}}
+						iconColor={router.pathname === '/sell-nft' ? 'rgb(236, 166, 9)' : 'rgb(46, 125, 175)'}
 					/>
 					<Button
 						icon={<Image fontSize={24} />}
