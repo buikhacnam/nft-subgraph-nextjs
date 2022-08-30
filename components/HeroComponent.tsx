@@ -8,7 +8,6 @@ interface HeroProps {}
 
 const HeroComponent: React.FC<HeroProps> = ({}) => {
 	const router = useRouter()
-	console.log('router', router.pathname)
 	const {
 		enableWeb3, // the function asks for permissions and connects to Metamask
 		account, // account address of connected wallet
