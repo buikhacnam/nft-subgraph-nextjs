@@ -10,14 +10,14 @@ export default function ManualHeader() {
 		isWeb3EnableLoading, // boolean when connect is in progress
 	} = useMoralis()
 
-	console.log("ACCOUNT STATUS",{
-		enableWeb3,
-		account,
-		isWeb3Enabled, //boolean
-		Moralis,
-		deactivateWeb3,
-		isWeb3EnableLoading,
-	})
+	// console.log("ACCOUNT STATUS",{
+	// 	enableWeb3,
+	// 	account,
+	// 	isWeb3Enabled, //boolean
+	// 	Moralis,
+	// 	deactivateWeb3,
+	// 	isWeb3EnableLoading,
+	// })
 
 	// console.log('typeof window', typeof window)
 

@@ -1,4 +1,5 @@
 import Link from "next/link"
+import ManualHeader from './ManualHeader'
 
 export default function Header() {
     return (
@@ -18,6 +19,7 @@ export default function Header() {
                     <a className="mr-4 p-6">Sell NFTs</a>
                 </Link>
             </div>
+            <ManualHeader />
         </nav>
     )
 }
