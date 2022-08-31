@@ -4,6 +4,13 @@
 	margin-top: 5px;
 }
 
+.nft-container {
+	display: grid;
+	gap: 16px;
+	margin-top: 5px;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
 .about-container {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
@@ -11,7 +18,7 @@
 }
 
 @media only screen and (max-width: 600px) {
-	.nav-wrapper {
+	.nav-wrapper, .nft-container {
 		flex-direction: column;
 	}
 

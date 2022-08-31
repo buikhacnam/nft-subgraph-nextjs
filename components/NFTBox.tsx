@@ -1,17 +1,20 @@
 import type { NextPage } from 'next'
-import { 
-    Card, 
-    Tooltip, 
-    Illustration, 
-    useNotification 
+import {
+	Card,
+	Tooltip,
+	Illustration,
+	useNotification,
+	Tag,
+	Typography,
 } from '@web3uikit/core'
 import nftAbi from '../constants/BasicNft.json'
 import nftMarketplaceAbi from '../constants/NftMarketplace.json'
 
-import { 
-    // useMoralisWeb3Api, 
-    useMoralis, 
-    useWeb3Contract } from 'react-moralis'
+import {
+	// useMoralisWeb3Api,
+	useMoralis,
+	useWeb3Contract,
+} from 'react-moralis'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
 const { ethers } = require('ethers')
@@ -56,10 +59,10 @@ const NFTBox: NextPage<NFTBoxProps> = ({
 		string | undefined
 	>()
 
-    console.log({
-        imageURI,
-		account
-    })
+	console.log({
+		imageURI,
+		account,
+	})
 
 	const dispatch = useNotification()
 
@@ -84,7 +87,8 @@ const NFTBox: NextPage<NFTBoxProps> = ({
 	})
 
 	async function updateUI() {
-		const tokenURI = await getTokenURI()  
+		// const tokenURI = await getTokenURI()
+		const tokenURI = 'ipfs://QmWRct8QAgA4HD3mJxiLejeq7Wg98VLef9qpRFuEFuaPDG'
 		console.log(`TokenURI is: ${tokenURI}`)
 		// We are cheating a bit here...
 		if (tokenURI) {
@@ -109,16 +113,17 @@ const NFTBox: NextPage<NFTBoxProps> = ({
 	}, [isWeb3Enabled])
 
 	const isOwnedByUser = seller === account || seller === undefined
-	const formattedSellerAddress = isOwnedByUser ? "you" : truncateStr(seller || "", 15)
+	const formattedSellerAddress = isOwnedByUser
+		? 'you'
+		: truncateStr(seller || '', 15)
 
 	const handleCardClick = () =>
 		isOwnedByUser
 			? setShowModal(true)
-			: 
-			// setShowModal(true)
-			buyItem({
+			: // setShowModal(true)
+			  buyItem({
 					onSuccess: () => handleBuyItemSuccess(),
-					onError: (e) => console.log(e)
+					onError: e => console.log(e),
 			  })
 
 	const handleBuyItemSuccess = () => {
@@ -144,51 +149,68 @@ const NFTBox: NextPage<NFTBoxProps> = ({
 	return (
 		<div>
 			<UpdateListingModal
-                isVisible={showModal && isListed}
-                imageURI={imageURI}
-                nftMarketplaceAbi={nftMarketplaceAbi}
-                nftAddress={nftAddress}
-                tokenId={tokenId}
-                onClose={hideModal}
-                marketplaceAddress={marketplaceAddress}
-                currentPrice={price}
-            />
+				isVisible={showModal && isListed}
+				imageURI={imageURI}
+				nftMarketplaceAbi={nftMarketplaceAbi}
+				nftAddress={nftAddress}
+				tokenId={tokenId}
+				onClose={hideModal}
+				marketplaceAddress={marketplaceAddress}
+				currentPrice={price}
+			/>
 			<Card
 				title={tokenName}
 				description={tokenDescription}
 				onClick={handleCardClick}
 			>
-				<Tooltip 
-                content={tooltipContent} 
-                // content=''
-                position='top'>
+				<Tooltip
+					content={tooltipContent}
+					// content=''
+					position='top'
+				>
 					<div>
 						{imageURI ? (
 							<div>
-								<div>#{tokenId}</div>
-								<div>
-									 Owned by {formattedSellerAddress} 
+								<div
+									style={{
+										display: 'flex',
+										justifyContent: 'space-between',
+										alignItems: 'center',
+									}}
+								>
+									{price && (
+										<Tag
+											color='green'
+											text={
+												ethers.utils.formatUnits(
+													price,
+													'ether'
+												) + ' ETH'
+											}
+										/>
+									)}
+									<Tag
+										color='blue'
+										onCancelClick={function noRefCheck() {}}
+										text={'# ' + tokenId}
+									/>
 								</div>
-								<Image
-									loader={() => imageURI}
-									src={imageURI}
-									height='200'
-									width='200'
-								/>
-								{price && (
-									<div>
-										{ethers.utils.formatUnits(
-											price,
-											'ether'
-										)}{' '}
-										ETH
-									</div>
-								)}
+								<Typography style={{ marginTop: 5 }}>
+									Owned by {formattedSellerAddress}
+								</Typography>
+								<div style={{display: 'flex', justifyContent: 'center', padding: '5px 0'}}>
+									<Image
+										loader={() => imageURI}
+										src={imageURI}
+										height='200'
+										width='200'
+									/>
+								</div>
 							</div>
 						) : (
 							<div>
 								<Illustration
-									height='180px'
+									height='200px'
 									logo='lazyNft'
 									width='100%'
 								/>

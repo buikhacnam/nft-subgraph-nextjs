@@ -53,7 +53,7 @@ const Home: NextPage = () => {
 				Recent Listed NFT
 			</Typography>
             </div>
-			<div style={{display: 'flex', gap: 20}}>
+			<div className='nft-container'>
 				{loading || !listedNfts ? (
 					<div>Loading...</div>
 				) : (
