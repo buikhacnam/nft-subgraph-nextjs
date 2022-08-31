@@ -1,4 +1,3 @@
-import styles from '../styles/Home.module.css'
 import { Form, useNotification, Button } from '@web3uikit/core'
 import { useMoralis, useWeb3Contract } from 'react-moralis'
 import { ethers, BigNumber } from 'ethers'
@@ -119,7 +118,7 @@ export default function Home() {
 	}, [proceeds, account, isWeb3Enabled, chainId])
 
 	return (
-		<div className={styles.container}>
+		<div>
 			<Form
 				onSubmit={approveAndList}
 				data={[

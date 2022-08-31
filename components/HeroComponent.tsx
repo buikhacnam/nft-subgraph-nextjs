@@ -43,6 +43,7 @@ const HeroComponent: React.FC<HeroProps> = ({}) => {
 		})
 	}, [])
 	return (
+		<div style={{marginBottom: 20}}>
 		<Hero
 			align='right'
 			backgroundColor='#57A5FF'
@@ -52,7 +53,7 @@ const HeroComponent: React.FC<HeroProps> = ({}) => {
 			}}
 			height='190px'
 			padding='20px 40px'
-			rounded='20px'
+			// rounded='20px'
 			textColor='#fff'
 			title={''}
 		>
@@ -110,26 +111,29 @@ const HeroComponent: React.FC<HeroProps> = ({}) => {
 						}}
 						iconColor={router.pathname === '/sell-nft' ? 'rgb(236, 166, 9)' : 'rgb(46, 125, 175)'}
 					/>
-					<Button
+					{/* <Button
 						icon={<Image fontSize={24} />}
 						text='Your NFT'
 						theme='link'
 						onClick={() => {
 							router.push('/sell-nft')
 						}}
-					/>
+					/> */}
 					<Button
 						icon={<Rocket fontSize={24} />}
 						text='About'
 						theme='link'
 						onClick={() => {
-							router.push('/sell-nft')
+							router.push('/about')
 						}}
+						iconColor={router.pathname === '/about' ? 'rgb(236, 166, 9)' : 'rgb(46, 125, 175)'}
+
 					/>
 				</div>
 				{isWeb3EnableLoading && <div>connecting...</div>}
 			</React.Fragment>
 		</Hero>
+		</div>
 	)
 }
 export default HeroComponent
