@@ -1,18 +1,21 @@
 .nav-wrapper {
-    display: flex;
-    gap: 16px;
-    margin-top: 5px;
+	display: flex;
+	gap: 16px;
+	margin-top: 5px;
 }
-       
-
-@media only screen and (max-width: 600px) {
-    .nav-wrapper {
-        /* flex-direction: column; */
-        
-}}
 
 .about-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 20px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+	.nav-wrapper {
+		flex-direction: column;
+	}
+
+	.about-container {
+		grid-template-columns: 1fr;
+	}
 }

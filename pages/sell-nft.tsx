@@ -56,7 +56,6 @@ export default function Home() {
 		tokenId: string,
 		price: string
 	) {
-		console.log('Ok! Now time to list')
 		const listOptions = {
 			abi: nftMarketplaceAbi,
 			contractAddress: marketplaceAddress,

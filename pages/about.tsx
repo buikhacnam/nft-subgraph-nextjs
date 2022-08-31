@@ -10,7 +10,7 @@ export default function About() {
         <img src='https://i.pinimg.com/originals/68/7c/ea/687cea8aabd579611223b9f6332f1cbb.gif' width='100%' alt='' />
       </div>
 			<div>
-				<Typography>This Nft Market place allows you to:</Typography>
+				<Typography>This Nft Market place allows you to</Typography>
 				<ul>
 					<li>List your NFTs</li>
 					<li>Browse NFTs</li>

@@ -142,7 +142,7 @@ const NFTBox: NextPage<NFTBoxProps> = ({
 		: 'Create listing'
 
 	return (
-		<div className='p-2'>
+		<div>
 			<UpdateListingModal
                 isVisible={showModal && isListed}
                 imageURI={imageURI}
@@ -162,11 +162,11 @@ const NFTBox: NextPage<NFTBoxProps> = ({
                 content={tooltipContent} 
                 // content=''
                 position='top'>
-					<div className='p-2'>
+					<div>
 						{imageURI ? (
-							<div className='flex flex-col items-end gap-2'>
+							<div>
 								<div>#{tokenId}</div>
-								<div className='italic text-sm'>
+								<div>
 									 Owned by {formattedSellerAddress} 
 								</div>
 								<Image
@@ -176,7 +176,7 @@ const NFTBox: NextPage<NFTBoxProps> = ({
 									width='200'
 								/>
 								{price && (
-									<div className='font-bold'>
+									<div>
 										{ethers.utils.formatUnits(
 											price,
 											'ether'
@@ -186,7 +186,7 @@ const NFTBox: NextPage<NFTBoxProps> = ({
 								)}
 							</div>
 						) : (
-							<div className='flex flex-col items-center gap-1'>
+							<div>
 								<Illustration
 									height='180px'
 									logo='lazyNft'

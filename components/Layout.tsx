@@ -1,4 +1,3 @@
-import Header from "./Header"
 import HeroComponent from './HeroComponent'
 
 const Layout = ({ children }: any) => {
