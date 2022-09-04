@@ -87,8 +87,8 @@ const NFTBox: NextPage<NFTBoxProps> = ({
 	})
 
 	async function updateUI() {
-		// const tokenURI = await getTokenURI()
-		const tokenURI = 'ipfs://QmWRct8QAgA4HD3mJxiLejeq7Wg98VLef9qpRFuEFuaPDG'
+		const tokenURI = await getTokenURI()
+		// const tokenURI = 'ipfs://QmazbcEGTysJXQN55YsPf8MuLD3qtj9ZYAaoWYYr9YzfsC.json'
 		console.log(`TokenURI is: ${tokenURI}`)
 		// We are cheating a bit here...
 		if (tokenURI) {
