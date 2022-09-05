@@ -7,8 +7,12 @@ export default function About() {
 	return (
 		<div className='about-container'>
 			<div>
-        <img src='https://i.pinimg.com/originals/68/7c/ea/687cea8aabd579611223b9f6332f1cbb.gif' width='100%' alt='' />
-      </div>
+				<img
+					src='https://i.pinimg.com/originals/68/7c/ea/687cea8aabd579611223b9f6332f1cbb.gif'
+					width='100%'
+					alt=''
+				/>
+			</div>
 			<div>
 				<Typography>This Nft Market place allows you to</Typography>
 				<ul>
@@ -29,6 +33,18 @@ export default function About() {
 					<li>@graphprotocol</li>
 				</ul>
 
+				<Typography>The contract</Typography>
+				<ul>
+					<li>
+						<a
+							target={'_blank'}
+							rel='noreferrer'
+							href='https://rinkeby.etherscan.io/address/0x99701f665b1CcE2F4b88ba7275606BFa71b28008#code'
+						>
+							View it on Etherscan
+						</a>
+					</li>
+				</ul>
 				<Typography>Source code on Github</Typography>
 				<ul>
 					<li>

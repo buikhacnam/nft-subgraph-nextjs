@@ -87,10 +87,9 @@ const NFTBox: NextPage<NFTBoxProps> = ({
 	})
 
 	async function updateUI() {
-		const tokenURI = await getTokenURI()
-		// const tokenURI = 'ipfs://QmazbcEGTysJXQN55YsPf8MuLD3qtj9ZYAaoWYYr9YzfsC.json'
+		let tokenURI = await getTokenURI()
+		// let tokenURI = 'ipfs://bafyreidfkvzj77irx57xc4bmmhbbhak7totciyho2xl6cwiwupoqemv3yq/metadata.json'
 		console.log(`TokenURI is: ${tokenURI}`)
-		// We are cheating a bit here...
 		if (tokenURI) {
 			const requestURL = (tokenURI as string).replace(
 				'ipfs://',
@@ -100,9 +99,9 @@ const NFTBox: NextPage<NFTBoxProps> = ({
 			const imageURI = tokenURIResponse.image
 			const imageURIURL = (imageURI as string).replace(
 				'ipfs://',
-				'https://ipfs.io/ipfs/'
-			)
-			setImageURI(imageURIURL)
+				''
+			).replace('/', '.ipfs.nftstorage.link/')
+			setImageURI('https://' + imageURIURL)
 			setTokenName(tokenURIResponse.name)
 			setTokenDescription(tokenURIResponse.description)
 		}
@@ -211,7 +210,7 @@ const NFTBox: NextPage<NFTBoxProps> = ({
 							<div>
 								<Illustration
 									height='200px'
-									logo='lazyNft'
+									logo='marketplace'
 									width='100%'
 								/>
 								Loading...

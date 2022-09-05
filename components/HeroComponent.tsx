@@ -59,7 +59,7 @@ const HeroComponent: React.FC<HeroProps> = ({}) => {
 		>
 			<React.Fragment key='.0'>
 				<Typography variant='h1'>
-					<Link href='/'> CaseyBui NFT Marketplace</Link>
+					<Link href='/'> Football NFT Marketplace</Link>
 				</Typography>
 				<div style={{ marginTop: 10 }}>
 					{account && window.localStorage.getItem('connected') ? (
