@@ -99,9 +99,10 @@ const NFTBox: NextPage<NFTBoxProps> = ({
 			const imageURI = tokenURIResponse.image
 			const imageURIURL = (imageURI as string).replace(
 				'ipfs://',
-				''
-			).replace('/', '.ipfs.nftstorage.link/')
-			setImageURI('https://' + imageURIURL)
+				'https://ipfs.io/ipfs/'
+			)
+			// .replace('/', '.ipfs.nftstorage.link/')
+			setImageURI(imageURIURL)
 			setTokenName(tokenURIResponse.name)
 			setTokenDescription(tokenURIResponse.description)
 		}
