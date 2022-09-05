@@ -8,7 +8,7 @@ export default function About() {
 		<div className='about-container'>
 			<div>
 				<img
-					src='https://i.pinimg.com/originals/68/7c/ea/687cea8aabd579611223b9f6332f1cbb.gif'
+					src='https://raw.githubusercontent.com/buikhacnam/buikhacnam/main/public/football-nft.gif'
 					width='100%'
 					alt=''
 				/>
