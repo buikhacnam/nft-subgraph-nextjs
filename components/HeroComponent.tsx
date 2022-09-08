@@ -95,7 +95,7 @@ const HeroComponent: React.FC<HeroProps> = ({}) => {
 				<div className='nav-wrapper'>
 					<Button
 						icon={<Dapps fontSize={24} />}
-						text='Home'
+						text='Market'
 						theme='link'
 						onClick={() => {
 							router.push('/')

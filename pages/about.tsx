@@ -14,7 +14,7 @@ export default function About() {
 				/>
 			</div>
 			<div>
-				<Typography>This Nft Market place allows you to</Typography>
+				<Typography>This Nft Marketplace allows you to</Typography>
 				<ul>
 					<li>List your NFTs</li>
 					<li>Browse NFTs</li>
